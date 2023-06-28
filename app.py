@@ -249,6 +249,6 @@ def delete():
     conn.commit()
     conn.close()
     return redirect(request.referrer)
-    
+
 if __name__ == '__main__':
     app.run(debug=True)
