@@ -3,7 +3,6 @@ import requests
 import sqlite3
 from datetime import datetime, timedelta
 import math
-import uvicorn
 
 app = Flask(__name__)
 app.secret_key = "your_secret_key"
@@ -250,9 +249,6 @@ def delete():
     conn.commit()
     conn.close()
     return redirect(request.referrer)
-
-def main():
-    uvicorn.run(app, host="0.0.0.0", port=10000, reload=True)
     
 if __name__ == '__main__':
     app.run(debug=True)
