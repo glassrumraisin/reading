@@ -3,6 +3,7 @@ import requests
 import sqlite3
 from datetime import datetime, timedelta
 import math
+import uvicorn
 
 app = Flask(__name__)
 app.secret_key = "your_secret_key"
