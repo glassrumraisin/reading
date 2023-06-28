@@ -1,0 +1,74 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+{% with messages = get_flashed_messages() %}
+  {% if messages %}
+    <ul class="error" style="list-style-type:none;">
+      {% for message in messages %}
+        {% if "error" in message %}
+          <li>{{ message }}</li>
+        {% else %}
+          <li>{{ message }}</li>
+        {% endif %}
+      {% endfor %}
+    </ul>
+  {% endif %}
+{% endwith %}
+
+
+  <h3>Enter the pages you plan to read in a day.</h3>
+  <form action="/days" method="post">
+    <label for="pages"><h4>Enter pages:</h4></label>
+    <input type="number" id="pages" name="pages_per_day">
+    <button type="submit" class="btn btn-primary">submit</button>
+  </form>
+  {% if total_pages %}
+    <p>Total Pages: {{ total_pages }}</p>
+  {% else %}
+    <p>Total Pages: 0</p>
+  {% endif %}
+  {% if pages_per_day %}
+      <p>Pages per day: {{ pages_per_day }}</p>
+      <p>Number of days required: {{ days }}</p>
+      {% if books %}
+        {% if total_pages %}
+        <h3>The day you finish reading: {{ finish_date.strftime("%Y/%m/%d") }}</h3>
+        {% endif %}
+      {% endif %}
+  {% endif %}
+  <br>
+  <h3>Book List</h3>
+  {% if books %}
+    <table class="table table-striped">
+      <tr>
+        <th scope="col">ISBN</th>
+        <th scope="col">Title</th>
+        <th scope="col">Author</th>
+        <th scope="col">Pages</th>
+        <th scope="col">Publisher</th>
+        <th scope="col"></th>
+      </tr>
+      {% for book in books %}
+    <tr>
+      <td>{{ book[0] }}</td>
+      <td>{{ book[1] }}</td>
+      <td>{{ book[2] }}</td>
+      <td>{{ book[3] }}</td>
+      <td>{{ book[4] }}</td>
+      <td><form action="/delete" method="post">
+        <input type="hidden" name="isbn" value="{{ book[0] }}">
+        <button type="submit" class="btn btn-primary">delete</button>
+      </form>
+      </td>
+    </tr>
+    {% endfor %}
+    </table>
+  {% else %}
+    <h4>No books found in the database.</h4>
+    <br>
+    <a href="/search">Search for a book</a>
+  {% endif %}
+  <br><br>
+  <a href="{{ url_for('index') }}">Go back to the homepage</a>
+{% endblock %}
