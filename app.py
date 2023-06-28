@@ -250,5 +250,8 @@ def delete():
     conn.close()
     return redirect(request.referrer)
 
+def main():
+    uvicorn.run(app, host="0.0.0.0", port=10000, reload=True)
+    
 if __name__ == '__main__':
     app.run(debug=True)
