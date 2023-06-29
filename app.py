@@ -26,6 +26,17 @@ def create_conn_pages():
     conn = sqlite3.connect("books.db")
     c = conn.cursor()
     c.execute("CREATE TABLE IF NOT EXISTS input_pages (pages INTEGER)")
+
+    # テーブル内の要素数をカウント
+    c.execute("SELECT COUNT(*) FROM input_pages")
+    count = c.fetchone()[0]
+
+    # テーブル内に要素がない場合は次の日の日付を挿入
+    if count == 0:
+        next_day = datetime.now() + timedelta(days=1)
+        c.execute("INSERT INTO input_pages (pages) VALUES (?)", (next_day,))
+
+    conn.commit()
     return conn
 
 #データベースの内容を画面に表示するための関数
