@@ -1,5 +1,4 @@
 ## 読書ペース管理アプリ
-### 動画リンク:  <URL https://youtu.be/tk4jnjZaoV8>
 ### アプリリンク： <URL https://reading-3qka.onrender.com>
 ### 開発背景
 私は読書が趣味であり,図書館を利用することも多い.  
