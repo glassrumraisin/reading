@@ -16,7 +16,7 @@
 - SQL
 	- 使い慣れているため
 #### その他
-- [openBD](https://api.openbd.jp)
+- [openBD](https://api.openbd.jp)  
 書誌情報を提供するAPI
 	- ページ数を利用したかったため
 ## 機能
