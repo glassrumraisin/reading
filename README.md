@@ -13,7 +13,7 @@
 - openBD
 書誌情報を提供するAPI  
 ページ数を利用できるため採用  
-Link: https://api.openbd.jp
+リンク: https://api.openbd.jp
 ## 機能
 - 書籍のISBNコードを入力し,openBD内にその書籍が存在する場合,アプリのデータベースに情報を追加する
 - 追加される情報はISBNコード,書籍名,著者,ページ数,出版社
