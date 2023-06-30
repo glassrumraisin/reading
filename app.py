@@ -114,6 +114,10 @@ def pages():
         if date_input is None:
             flash("Invalid date format", "error")
             return render_template("pages.html", books=books, total_pages=total_pages)
+        
+        if total_pages is None:
+            flash("No books in database", "error")
+            return render_template("pages.html", books=books, total_pages=total_pages)
 
         try:
             # 日付をdatetimeオブジェクトに変換
