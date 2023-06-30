@@ -1,6 +1,6 @@
-# 読書ペース管理アプリ
-## 動画リンク:  <URL https://youtu.be/tk4jnjZaoV8>
-## アプリリンク： <URL https://reading-3qka.onrender.com>
+## 読書ペース管理アプリ
+### 動画リンク:  <URL https://youtu.be/tk4jnjZaoV8>
+### アプリリンク： <URL https://reading-3qka.onrender.com>
 ### 技術選定
 #### フロントエンド
 - HTML/CSS
@@ -11,8 +11,8 @@
 - SQL
 #### その他
 - openBD
-書誌情報を提供するAPI
-ページ数を利用できるため採用
+書誌情報を提供するAPI  
+ページ数を利用できるため採用  
 Link: https://api.openbd.jp
 ## 機能
 - 書籍のISBNコードを入力し,openBD内にその書籍が存在する場合,アプリのデータベースに情報を追加する
